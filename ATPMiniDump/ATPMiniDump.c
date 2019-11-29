@@ -195,6 +195,7 @@ int wmain(int argc, wchar_t* argv[]) {
 	uPid.UniqueProcess = pWinVerInfo->hTargetPID;
 	uPid.UniqueThread = (HANDLE)0;
 
+	// A deviation from the default access right mask to avoid standard Sysmon ID_10 detection - this can be changed to suit one's needs
 	ULONG rights = (PROCESS_CREATE_PROCESS | PROCESS_CREATE_THREAD | PROCESS_QUERY_LIMITED_INFORMATION | PROCESS_DUP_HANDLE | PROCESS_QUERY_INFORMATION);
 	printf("Access rights %x\n", rights);
 
